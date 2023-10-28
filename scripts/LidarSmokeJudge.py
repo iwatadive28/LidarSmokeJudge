@@ -22,14 +22,14 @@ class LidarSmokeJudge:
         filt_d0 = cells_lidar['Dist'] == 0
         front_points_num = np.count_nonzero(filt_front & ~filt_d0)
 
-
         valid_idx = filt_dist & filt_front      # 有効な点
         valid_num = np.count_nonzero(valid_idx)
 
         # 割合
         valid_ratio = valid_num / front_points_num # 有効な点群の割合 0~1
-        zero_ratio = np.count_nonzero(filt_front & filt_d0) / np.count_nonzero(filt_front) # 前方の点のうちゼロ埋めされている点群の割合 0~1
-
+        # zero_ratio = np.count_nonzero(filt_front & filt_d0) / np.count_nonzero(filt_front) # 前方の点のうちゼロ埋めされている点群の割合 0~1
+        zero_ratio = 1-len(cells_lidar['Dist'])/self.params_is_insmoke['max_points_num']
+        
         # 判定
         is_insmoke_valid = valid_ratio < self.params_is_insmoke['thresh_valid']
         is_insmoke_zero = zero_ratio > self.params_is_insmoke['thresh_zero']
@@ -53,7 +53,8 @@ def test():
     params_is_insmoke = {
         'D': 5.0,
         'thresh_valid': 0.75, # 以下
-        'thresh_zero': 0.60 # 以上
+        'thresh_zero': 0.60,# 以上
+        'max_points_num':28800
     }
 
     params_smoke_filt = {
