@@ -34,6 +34,11 @@ asciiのファイルは、例えば下記のように点群の情報が保存さ
 ...
 ```
 
+## Sample Data
+
+'sampledata/data_ascii'直下にサンプルデータを追加しています。
+
+
 ## LiDARSmokeJudgeの実行
 
 plot_LiDARSmokeJudge.py の下記を任意のディレクトリ、フレーム数として実行
