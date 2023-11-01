@@ -178,7 +178,7 @@ class LiDARVisualizer:
         
 if __name__ == "__main__":
     # データが保存されているディレクトリのパス
-    data_dir = '../data/smoke3/velodynevlp16/data_ascii'
+    data_dir = '../sampledata/data_ascii'
     start_frame = 200
     end_frame = 250
     visualizer = LiDARVisualizer(data_dir, start_frame, end_frame)
