@@ -41,6 +41,7 @@ asciiのファイルは、例えば下記のように点群の情報が保存さ
 
 ## LiDARSmokeJudgeの実行
 
+
 plot_LiDARSmokeJudge.py の下記を任意のディレクトリ、フレーム数として実行
 
 ```python
@@ -54,7 +55,9 @@ if __name__ == "__main__":
 ```
 
 ```
+$ cd scripts
 $ python .\plot_LiDARSmokeJudge.py
 ```
+
 以下のようなグラフが出力されるはず。
 ![Alt text](image/image.png)
