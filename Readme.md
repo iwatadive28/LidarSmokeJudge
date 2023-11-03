@@ -6,6 +6,14 @@ scripts/LidarSmokeJudge.py に `LidarSmokeJudge`とテストコードを記載�
 - is_in_smoke: 霧の中にいるか判定する
 - smoke_filter: 霧の可能性がある点群にフラグを立てる
 
+# Requirements
+- Python3.X
+- 必要に応じてインストールしてください。
+```
+$ pip3 install dpkt
+$ pip3 install tdqm
+```
+
 # Usage
 
 ## pacpデータを変換
